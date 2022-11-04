@@ -39,10 +39,11 @@
       <div class="col d-flex justify-content-center pt-3">
 
         <div class="task-input d-flex justify-content-center h-75 bg-dark rounded-5 p-2">
-          <label for="input" class="text-white fw-bold mx-3">Inserisci qui:</label>
-          <input v-model="newTask"
-          type="text" class="form-control w-25 rounded-pill" placeholder="NewTask">
-          <button @click="addNewTask()" type="button" class="btn btn-light btn-sm mx-3 rounded-pill btn-cx">Aggiungi</button>
+          <label for="input" class="label-cx text-white fw-bold">Inserisci qui:</label>
+          <input v-model.trim="newTask"
+          @keyup.enter="addNewTask()"
+          type="text" class="input-cx form-control rounded-pill" placeholder="NewTask">
+          <button @click="addNewTask()" type="button" class="btn btn-light btn-sm rounded-pill btn-cx">Aggiungi</button>
         </div>
 
       </div>
@@ -51,6 +52,7 @@
 
     </div>
 
+    <!-- TODO LIST -->
     <div class="row">
       <div class="col d-flex justify-content-center">
 
@@ -62,12 +64,15 @@
               :class="{'done': task.done === true}">
                 {{task.text}}
               </span>
+              <!-- <span class="badge badge-cx bg-primary rounded-circle">1</span> -->
               <i @click.stop="removeTask(index)"
               class="fa-solid fa-trash text-white"></i>
             </li>
           </ul>
-
+          
           <h3 v-else class="px-5 py-3">Hai completato tutte le Task! &#128526;</h3>
+          <p>Task da effetuare: </p>
+
         </div>
 
       </div>

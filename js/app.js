@@ -24,6 +24,7 @@ createApp({
   data(){
     return{
       errorMsg:'',
+      errorMsg2:'',
       newTask:'',
       tasks:[
         {
@@ -59,6 +60,14 @@ createApp({
           text: this.newTask,
           done: false
         }
+        this.tasks.forEach(element => {
+          const {text} = element;
+          console.log(text);
+          if(text === this.newTask){
+            console.log('--------->già presente');
+            return this.errorMsg = 'Attenzione! La Task è già presente!'
+          }
+        });
         this.tasks.unshift(newTaskTodo);
       }
       this.newTask='';

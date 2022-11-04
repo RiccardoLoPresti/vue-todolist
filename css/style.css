@@ -16,8 +16,18 @@ img{
 .logo img{
   width: 300px;
 }
+
+.label-cx{
+  margin: 0 10px;
+}
+
+.input-cx{
+  width: 100px;
+}
+
 .btn-cx{
   line-height: 10px;
+  margin:0 10px;
 }
 
 .task{
