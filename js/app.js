@@ -52,17 +52,28 @@ createApp({
       }
     },
     addNewTask(){
+      //svuoto errorMsg
       this.errorMsg ='';
+
+      //se minore di 5 caratteri si interrompe la funzione
       if(this.newTask.length < 5){
         return this.errorMsg = 'Attenzione! La Task deve essere lunga almeno 5 caratteri!'
+
+        //se più lunga salvo il dato in una const
       }else{
         const newTaskTodo = {
           text: this.newTask,
           done: false
         }
+
+        //ciclo tutti gli elementi dell' array tasks
         this.tasks.forEach(element => {
+
+          //salvo nella variabile text di tasks
           const {text} = element;
           console.log(text);
+
+          //se text è uguale a il dato appena inserito blocca funzione con msgError e non aggiunge la task
           if(text === this.newTask){
             console.log('--------->già presente');
             return this.errorMsg = 'Attenzione! La Task è già presente!'
