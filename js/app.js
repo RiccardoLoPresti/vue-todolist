@@ -53,7 +53,7 @@ createApp({
     addNewTask(){
       this.errorMsg ='';
       if(this.newTask.length < 5){
-        this.errorMsg = 'Attenzione! La Task deve essere lunga almeno 5 caratteri!'
+        return this.errorMsg = 'Attenzione! La Task deve essere lunga almeno 5 caratteri!'
       }else{
         const newTaskTodo = {
           text: this.newTask,
