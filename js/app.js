@@ -24,17 +24,18 @@ createApp({
   data(){
     return{
       errorMsg:'',
+      newTask:'',
       tasks:[
         {
-          text:'Fare i compitini con Vue!',
+          text:'Fare i compitini con Vue',
           done: false
         },
         {
-          text:'Ascoltare musica senza un domani!',
+          text:'Ascoltare musica senza un domani',
           done: true
         },
         {
-          text:'Contemplare il monito per per ore!',
+          text:'Contemplare il monitor per ore',
           done: false
         },
       ]
@@ -48,6 +49,19 @@ createApp({
       }else{
         this.tasks.splice(index,1);
       }
+    },
+    addNewTask(){
+      this.errorMsg ='';
+      if(this.newTask.length < 5){
+        this.errorMsg = 'Attenzione! La Task deve essere lunga almeno 5 caratteri!'
+      }else{
+        const newTaskTodo = {
+          text: this.newTask,
+          done: false
+        }
+        this.tasks.unshift(newTaskTodo);
+      }
+      this.newTask='';
     }
   }
 }).mount('#app')

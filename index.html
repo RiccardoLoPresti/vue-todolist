@@ -40,13 +40,14 @@
 
         <div class="task-input d-flex justify-content-center h-75 bg-dark rounded-5 p-2">
           <label for="input" class="text-white fw-bold mx-3">Inserisci qui:</label>
-          <input type="text" class="form-control w-25 rounded-pill" placeholder="NewTask">
-          <button type="button" class="btn btn-light btn-sm mx-3 rounded-pill btn-cx">Aggiungi</button>
+          <input v-model="newTask"
+          type="text" class="form-control w-25 rounded-pill" placeholder="NewTask">
+          <button @click="addNewTask()" type="button" class="btn btn-light btn-sm mx-3 rounded-pill btn-cx">Aggiungi</button>
         </div>
 
       </div>
         
-      <p class="text-danger bg-white">{{errorMsg}}</p>
+      <p class="text-danger fw-bold bg-white">{{errorMsg}}</p>
 
     </div>
 
@@ -54,7 +55,7 @@
       <div class="col d-flex justify-content-center">
 
         <div class="task-area bg-dark rounded-5 w-75">
-          <ul>
+          <ul v-if="tasks.length > 0">
             <li v-for="(task, index) in tasks"
             class="task text-white list-unstyled d-flex justify-content-between border-bottom p-2 my-3">
               <span @click="task.done = !task.done"
@@ -66,7 +67,7 @@
             </li>
           </ul>
 
-          <!-- <h3 class="p-2">Hai completato tutte le Task!</h3> -->
+          <h3 v-else class="px-5 py-3">Hai completato tutte le Task! &#128526;</h3>
         </div>
 
       </div>
