@@ -18,3 +18,26 @@ Buon lavoro e buon divertimento! :congapartyparrot:
 ps la grafica proposta è solo indicativa, potete svilupparla come credete ma sempre in modo funzionale
 */
 
+const {createApp} = Vue;
+
+createApp({
+  data(){
+    return{
+      errorMsg:'',
+      tasks:[
+        {
+          text:'Fare i compitini con Vue!',
+          done: false
+        },
+        {
+          text:'Ascoltare musica senza un domani!',
+          done: true
+        },
+        {
+          text:'Contemplare il monito per per ore!',
+          done: false
+        },
+      ]
+    }
+  }
+}).mount('#app')

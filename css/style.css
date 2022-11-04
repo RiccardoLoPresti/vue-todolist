@@ -23,3 +23,16 @@ img{
 .task{
   margin-right: 30px;
 }
+
+.task span{
+  cursor: pointer;
+}
+
+.done{
+  text-decoration: line-through;
+}
+
+.task i{
+  line-height: 30px;
+  padding-left: 10px;
+}

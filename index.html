@@ -54,9 +54,13 @@
       <div class="col d-flex justify-content-center">
 
         <div class="task-area bg-dark rounded-5 w-75">
-          <ul class="">
-            <li class="task text-white list-unstyled d-flex justify-content-between border-bottom p-2 my-3">
-              <span class="">Una task</span>
+          <ul>
+            <li v-for="(task, index) in tasks"
+            class="task text-white list-unstyled d-flex justify-content-between border-bottom p-2 my-3">
+              <span @click="task.done = !task.done"
+              :class="{'done': task.done === true}">
+                {{task.text}}
+              </span>
               <i class="fa-solid fa-trash text-white"></i>
             </li>
           </ul>
