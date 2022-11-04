@@ -39,5 +39,15 @@ createApp({
         },
       ]
     }
+  },
+  methods:{
+    removeTask(index){
+      this.errorMsg ='';
+      if(this.tasks[index].done === false){
+        this.errorMsg = 'Attenzione! Devi prima effetuare la Task per poterla eliminare!'
+      }else{
+        this.tasks.splice(index,1);
+      }
+    }
   }
 }).mount('#app')

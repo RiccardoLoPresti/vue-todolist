@@ -46,7 +46,7 @@
 
       </div>
         
-      <p class="text-danger bg-white">Attenzione! Inserirsre asajsajdajs</p>
+      <p class="text-danger bg-white">{{errorMsg}}</p>
 
     </div>
 
@@ -61,7 +61,8 @@
               :class="{'done': task.done === true}">
                 {{task.text}}
               </span>
-              <i class="fa-solid fa-trash text-white"></i>
+              <i @click.stop="removeTask(index)"
+              class="fa-solid fa-trash text-white"></i>
             </li>
           </ul>
 
