@@ -1,11 +1,3 @@
-/*
-BONUS
-- Verificare se il task è già presente e nel caso mostrare l’errore
-- ... il limite è la fantasia ;-)
-Buon lavoro e buon divertimento! :congapartyparrot:
-ps la grafica proposta è solo indicativa, potete svilupparla come credete ma sempre in modo funzionale
-*/
-
 const {createApp} = Vue;
 
 createApp({
@@ -51,6 +43,7 @@ createApp({
       }else{
 
         //con find confronto i task.text di tasks con newTask
+        //restituisce il PRIMO elemento nell'array fornito che soddisfa la funzione di test fornita. Se nessun valore soddisfa la funzione di test, viene restituito undefined.
         if (this.tasks.find(task => task.text === this.newTask)) {
           this.errorMsg ='Attenzione! La task esiste già!'
         } else {
